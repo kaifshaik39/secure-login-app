@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard - SecureAuth{% endblock %}
+{% block content %}
+<div class="dashboard-card">
+  <h1>Welcome, {{ user['username'] }} 👋</h1>
+  <p class="subtitle">You are securely logged in.</p>
+  <div class="info-grid">
+    <div class="info-item">
+      <span class="info-label">Username</span>
+      <span class="info-value">{{ user['username'] }}</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">Email</span>
+      <span class="info-value">{{ user['email'] }}</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">Member Since</span>
+      <span class="info-value">{{ user['created_at'] }}</span>
+    </div>
+  </div>
+  <a href="{{ url_for('logout') }}" class="btn btn-secondary">Log Out</a>
+</div>
+{% endblock %}

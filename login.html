@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Login - SecureAuth{% endblock %}
+{% block content %}
+<div class="auth-card">
+  <h1>Welcome Back</h1>
+  <p class="subtitle">Log in to your account</p>
+  <form method="POST" action="{{ url_for('login') }}" novalidate>
+    <div class="form-group">
+      <label for="username">Username or Email</label>
+      <input type="text" id="username" name="username" required autofocus>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Log In</button>
+  </form>
+  <p class="auth-switch">Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
+</div>
+{% endblock %}
