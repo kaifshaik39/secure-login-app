@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Register - SecureAuth{% endblock %}
+{% block content %}
+<div class="auth-card">
+  <h1>Create Account</h1>
+  <p class="subtitle">Sign up to get started</p>
+  <form method="POST" action="{{ url_for('register') }}" novalidate>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" value="{{ username or '' }}" required autofocus>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" value="{{ email or '' }}" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <small>Min 8 characters, with uppercase, lowercase, number & symbol.</small>
+    </div>
+    <div class="form-group">
+      <label for="confirm_password">Confirm Password</label>
+      <input type="password" id="confirm_password" name="confirm_password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+  <p class="auth-switch">Already have an account? <a href="{{ url_for('login') }}">Log in here</a></p>
+</div>
+{% endblock %}
