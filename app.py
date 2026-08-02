@@ -215,9 +215,7 @@ def logout():
 # ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
+init_db()
+
 if __name__ == '__main__':
-    if not os.path.exists(app.config['DATABASE']):
-        init_db()
-    else:
-        init_db()  # safe: uses CREATE TABLE IF NOT EXISTS
     app.run(debug=True)
